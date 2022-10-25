@@ -7,7 +7,8 @@ export default defineConfig({
   plugins: [vue()],
   resolve: {
     alias: {
-      '@': resolve(__dirname, './src'),
+      '@src': resolve(__dirname, './src'),
+      'floating-ui.vue-dom': resolve(__dirname, './src/index.js'),
     },
   },
   build: {
