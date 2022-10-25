@@ -1,8 +1,7 @@
 <script setup>
-import { ref } from 'vue'
-const helloWorld = ref('Hello world')
+import { FuiDemoBasic } from './demos';
 </script>
 
 <template>
-  <div>{{ helloWorld }}</div>
+  <FuiDemoBasic />
 </template>
