@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "isolatedModules": true,
+    "baseUrl": "./",
+    "noImplicitAny": false,
+    "paths": {
+      "@src/*": ["src/*"],
+      "floating-ui.vue-dom": ["src/index.js"]
+    }
+  },
+  "include": [
+    "./src/**/*",
+    "./playground/**/*"
+  ],
+  "exclude": ["node_modules", "./src/*.d.ts"]
+}

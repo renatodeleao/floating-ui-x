@@ -7,13 +7,15 @@
   "license": "ISC",
   "author": "Renato de Leão <https://positionrelative.co>",
   "scripts": {
-    "dev:vue-dom": "pnpm --filter=floating-ui.vue-dom run dev"
+    "dev:vue-dom": "pnpm --filter=floating-ui.vue-dom run dev",
+    "typecheck:vue-dom": "pnpm --filter=floating-ui.vue-dom run typecheck"
   },
   "prettier": {
     "singleQuote": true,
     "proseWrap": "always"
   },
   "devDependencies": {
-    "prettier": "^2.7.1"
+    "prettier": "^2.7.1",
+    "typescript": "~4.8.4"
   }
 }

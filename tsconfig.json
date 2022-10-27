@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    // must match floating-ui original package
+    "lib": ["dom", "es2020"],
+    "target": "es2020",
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "allowJs": true,
+    "esModuleInterop": true,
+
+    // custom tailored ones for the project
+    "baseUrl": ".",
+    "checkJs": true,
+    "paths": {
+      "floating-ui.vue-dom": ["packages/vue-dom/src/index.js"],
+    }
+  },
+  "include": ["packages/**/*"],
+  "exclude": ["node_modules"]
+}

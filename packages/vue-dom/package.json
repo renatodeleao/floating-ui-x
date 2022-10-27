@@ -3,10 +3,17 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "exports": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "files": [
+    "dist/",
+    "src/**/*.d.ts"
+  ],
   "scripts": {
     "dev": "vite serve",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "typecheck": "tsc"
   },
   "dependencies": {
     "@floating-ui/dom": "^1.0.3"

@@ -1,8 +1,12 @@
 import { ref, watch, toRefs, unref, reactive } from 'vue';
 import { computePosition } from '@floating-ui/dom';
 
+/**
+ * @param {import('./index').UseFloatingProps} options
+ * @return {import('./index').UseFloatingReturn}
+ */
 export function useFloating({
-  middleware = [],
+  middleware,
   placement = 'bottom',
   strategy = 'absolute',
   whileElementsMounted,
@@ -10,9 +14,16 @@ export function useFloating({
   const reference = ref(null);
   const floating = ref(null);
   const middlewareRef = ref(middleware);
-  const cleanupRef = ref(null);
   const placementRef = ref(placement);
   const strategyRef = ref(strategy);
+
+  /**
+   * Make tsc happy.
+   * @template T
+   * @typedef {import('vue').Ref<T>} Ref
+   * @type {Ref<Function | void | null>}
+   */
+  const whileElementsMountedCleanupRef = ref(null);
 
   const data = reactive({
     // Setting these to `null` will allow the consumer to determine if
@@ -43,9 +54,9 @@ export function useFloating({
   watch(middlewareRef, update, { deep: true });
 
   watch([reference, floating], () => {
-    if (cleanupRef.value) {
-      cleanupRef.value();
-      cleanupRef.value = null;
+    if (whileElementsMountedCleanupRef.value) {
+      whileElementsMountedCleanupRef.value();
+      whileElementsMountedCleanupRef.value = null;
     }
 
     if (!reference.value || !floating.value) {
@@ -53,7 +64,7 @@ export function useFloating({
     }
 
     if (whileElementsMounted) {
-      cleanupRef.value = whileElementsMounted(
+      whileElementsMountedCleanupRef.value = whileElementsMounted(
         reference.value,
         floating.value,
         update
