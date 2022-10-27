@@ -1,11 +1,16 @@
 <script setup>
-import { FuiDemoBasic, FuiDemoBasicArrow } from './demos';
+import {
+  FuiDemoBasic,
+  FuiDemoBasicArrow,
+  FuiDemoCompoundComponent,
+} from './demos';
 </script>
 
 <template>
   <div class="fui-grid">
     <FuiDemoBasic />
     <FuiDemoBasicArrow />
+    <FuiDemoCompoundComponent />
   </div>
 </template>
 

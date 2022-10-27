@@ -13,5 +13,5 @@
     "./src/**/*",
     "./playground/**/*"
   ],
-  "exclude": ["node_modules", "./src/*.d.ts"]
+  "exclude": ["node_modules"]
 }
