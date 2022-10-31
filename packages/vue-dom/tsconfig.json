@@ -6,12 +6,10 @@
     "noImplicitAny": false,
     "paths": {
       "@src/*": ["src/*"],
-      "floating-ui.vue-dom": ["src/index.js"]
     }
   },
   "include": [
     "./src/**/*",
-    "./playground/**/*"
   ],
   "exclude": ["node_modules"]
 }

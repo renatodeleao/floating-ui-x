@@ -9,6 +9,7 @@ import {
   provide,
   Ref,
   watch,
+  mergeProps,
 } from 'vue';
 
 import {
@@ -35,6 +36,77 @@ export const useTooltipContext = () => {
   return inject(contextSymbol) as UseTooltipContextReturn;
 };
 
+function useClick(context, options = {}) {
+  const { open } = context;
+  const { enabled = true, toggle = true } = options;
+
+  if (!enabled) return {};
+
+  return {
+    reference: {
+      onClick(_event) {
+        if (open.value && toggle) {
+          open.value = false;
+        } else {
+          open.value = true;
+        }
+      },
+    },
+  };
+}
+
+function useHover(context, options = {}) {
+  const { open } = context;
+  const { enabled = true, delay = 2000 } = options;
+
+  if (!enabled) return {};
+
+  const timer = ref<number | undefined>(undefined);
+
+  return {
+    reference: {
+      onMouseenter() {
+        clearTimeout(timer.value);
+
+        timer.value = setTimeout(() => {
+          open.value = true;
+        }, parseInt(delay));
+      },
+      onMouseleave() {
+        clearTimeout(timer.value);
+
+        timer.value = setTimeout(() => {
+          open.value = false;
+        }, parseInt(delay));
+      },
+    },
+  };
+}
+
+function useInteractions(propsList) {
+  // [ // { ref: click }, { ref: click }]
+  // [ { ref: [click, click]]
+  return propsList.reduce(
+    (acc, propsMap) => {
+      acc = {
+        reference: propsMap.reference
+          ? mergeProps(acc.reference, propsMap.reference)
+          : acc.ref,
+        floating: propsMap.floating
+          ? mergeProps(acc.floating, propsMap.floating)
+          : acc.floating,
+      };
+
+      return acc;
+    },
+    { reference: {}, floating: {} }
+  );
+}
+
+/**
+ * @todo try wrapping everything props related into UseFloatingProvider UseFloatingReference UseFloatingFloating
+ * And only add toggle/events functionality on the upper layer of tooltip abstraction?
+ */
 /**
  * Provider/Orchestrator Fragment
  */
@@ -62,16 +134,16 @@ export const FuiTooltip = defineComponent({
       whileElementsMounted: autoUpdate,
       middleware,
     });
-
     const shown = ref(true);
-    function toggle() {
-      shown.value = !shown.value;
-    }
+
+    const click = useClick({ open: shown });
+    const hover = useHover({ open: shown });
+    const useInteractionsReturn = useInteractions([hover, click]);
 
     provide(contextSymbol, {
       useFloatingReturn,
-      toggle,
       shown,
+      useInteractionsReturn,
       arrowRef,
       offsetRef,
     });
@@ -97,8 +169,10 @@ export const FuiTooltipReference = defineComponent({
     },
   },
   setup(props, { slots, attrs }) {
-    const { useFloatingReturn, toggle, shown } = useTooltipContext();
+    const { useFloatingReturn, toggle, shown, useInteractionsReturn } =
+      useTooltipContext();
     const { reference } = useFloatingReturn;
+    const { reference: referenceProps } = useInteractionsReturn;
 
     return () => {
       const slotScope = { isOpen: shown.value, ref: reference };
@@ -108,10 +182,7 @@ export const FuiTooltipReference = defineComponent({
           // and that the ref should be forwarded to to the correct root node
           reference.value = vnode.$el ?? vnode;
         },
-        onClick: (e) => {
-          if (props.disabled) return;
-          toggle(e);
-        },
+        ...referenceProps,
       };
 
       return render({

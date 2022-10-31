@@ -8,7 +8,8 @@
   "author": "Renato de Leão <https://positionrelative.co>",
   "scripts": {
     "dev:vue-dom": "pnpm --filter=floating-ui.vue-dom run dev",
-    "typecheck:vue-dom": "pnpm --filter=floating-ui.vue-dom run typecheck"
+    "typecheck:vue-dom": "pnpm --filter=floating-ui.vue-dom run typecheck",
+    "play:vue": "pnpm --filter=playground-vue run dev"
   },
   "prettier": {
     "singleQuote": true,
