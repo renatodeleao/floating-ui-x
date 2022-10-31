@@ -42,6 +42,21 @@ importers:
       vite: 3.1.8_sass@1.55.0
       vue: 3.2.41
 
+  packages/vue-dom-interactions:
+    specifiers:
+      '@vitejs/plugin-vue': ^3.1.0
+      floating-ui.vue-dom: workspace:*
+      sass: ^1.55.0
+      vite: ^3.1.0
+      vue: ^3.2.37
+    dependencies:
+      floating-ui.vue-dom: link:../vue-dom
+    devDependencies:
+      '@vitejs/plugin-vue': 3.2.0_vite@3.2.2+vue@3.2.41
+      sass: 1.55.0
+      vite: 3.2.2_sass@1.55.0
+      vue: 3.2.41
+
 packages:
 
   /@babel/helper-string-parser/7.19.4:
@@ -748,6 +763,37 @@ packages:
       postcss: 8.4.18
       resolve: 1.22.1
       rollup: 2.79.1
+    optionalDependencies:
+      fsevents: 2.3.2
+    dev: true
+
+  /vite/3.2.2_sass@1.55.0:
+    resolution: {integrity: sha512-pLrhatFFOWO9kS19bQ658CnRYzv0WLbsPih6R+iFeEEhDOuYgYCX2rztUViMz/uy/V8cLCJvLFeiOK7RJEzHcw==}
+    engines: {node: ^14.18.0 || >=16.0.0}
+    hasBin: true
+    peerDependencies:
+      less: '*'
+      sass: '*'
+      stylus: '*'
+      sugarss: '*'
+      terser: ^5.4.0
+    peerDependenciesMeta:
+      less:
+        optional: true
+      sass:
+        optional: true
+      stylus:
+        optional: true
+      sugarss:
+        optional: true
+      terser:
+        optional: true
+    dependencies:
+      esbuild: 0.15.12
+      postcss: 8.4.18
+      resolve: 1.22.1
+      rollup: 2.79.1
+      sass: 1.55.0
     optionalDependencies:
       fsevents: 2.3.2
     dev: true

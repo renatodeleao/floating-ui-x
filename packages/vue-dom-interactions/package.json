@@ -1,7 +1,6 @@
 {
-  "name": "floating-ui.vue-dom",
+  "name": "floating-ui.vue-dom-interactions",
   "version": "0.0.0",
-  "private": true,
   "license": "MIT",
   "type": "module",
   "exports": "./src/index.js",
@@ -17,7 +16,7 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@floating-ui/dom": "^1.0.3"
+    "floating-ui.vue-dom": "workspace:*"
   },
   "peerDependencies": {
     "vue": "^3.0.0"
