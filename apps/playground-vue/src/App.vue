@@ -3,6 +3,7 @@ import {
   FuiDemoBasic,
   FuiDemoBasicArrow,
   FuiDemoCompoundComponent,
+  FuiDemoBasicInteractions,
 } from './demos';
 </script>
 
@@ -11,6 +12,7 @@ import {
     <FuiDemoBasic />
     <FuiDemoBasicArrow />
     <FuiDemoCompoundComponent />
+    <FuiDemoBasicInteractions />
   </div>
 </template>
 
