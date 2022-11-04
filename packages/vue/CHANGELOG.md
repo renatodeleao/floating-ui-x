@@ -1,5 +1,11 @@
 # floating-ui-x-vue
 
+## 0.0.0-initial-20221104174409
+
+### Minor Changes
+
+- fix: faulty package.json preventing module import
+
 ## 0.0.0-initial-20221104164148
 
 ### Minor Changes
