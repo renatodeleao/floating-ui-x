@@ -14,7 +14,7 @@ If you reading this and want TypeScript so badly, please note that I accept the 
 
 Here's some [guidelines](https://github.com/sindresorhus/typescript-definition-style-guide) on how to do it take some of the points with a pinch of salt. But as i've said before, if someone contributes with a cool feature that works but can't make `tsc` happy I will ship it anyways.
 
-[1^]: https://erock.prose.sh/typescript-terrible-for-library-developers
+[^1]: https://erock.prose.sh/typescript-terrible-for-library-developers
 
 ## Motivation
 Because poppers/tooltips/fly-outs are something I'll use in every web project during my dev career, independently of the tech stack, and popper.js (now floating-ui) is the best position engine out there.
