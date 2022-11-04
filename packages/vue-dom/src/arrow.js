@@ -1,5 +1,6 @@
 import { unref } from 'vue';
 import { arrow as arrowCore } from '@floating-ui/dom';
+import { unrefElement } from './utils';
 
 /**
  * @param {import('./index').ArrowOptions} options
@@ -15,7 +16,7 @@ export function arrow(options) {
      * @return {object}
      */
     fn(args) {
-      const $element = unref(element);
+      const $element = unrefElement(element);
       if ($element != null) {
         return arrowCore({ element: $element, padding }).fn(args);
       }
@@ -42,7 +43,7 @@ export function arrowPosition(options) {
     name: 'arrowPosition',
     options,
     fn({ placement, middlewareData }) {
-      const $element = unref(element);
+      const $element = unrefElement(element);
 
       if ($element) {
         const { arrow } = middlewareData;

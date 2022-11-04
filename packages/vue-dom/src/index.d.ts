@@ -1,4 +1,4 @@
-import { Ref, ToRefs } from 'vue';
+import { Ref, ToRefs, ComponentPublicInstance } from 'vue';
 import {
   ComputePositionReturn,
   Middleware,
@@ -24,8 +24,8 @@ export type UseFloatingData = Omit<ComputePositionReturn, 'x' | 'y'> & {
 
 export type UseFloatingReturn = ToRefs<UseFloatingData> & {
   update: () => void;
-  reference: Ref<ReferenceElement | null>;
-  floating: Ref<FloatingElement | null>;
+  reference: Ref<ReferenceElement | ComponentPublicInstance | null>;
+  floating: Ref<FloatingElement | ComponentPublicInstance | null>;
 };
 
 export type UseFloatingProps = {

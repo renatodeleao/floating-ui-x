@@ -4,6 +4,7 @@ import {
   FuiDemoBasicArrow,
   FuiDemoCompoundComponent,
   FuiDemoBasicInteractions,
+  FuiDemoBasicComponentRefs,
 } from './demos';
 </script>
 
@@ -13,6 +14,7 @@ import {
     <FuiDemoBasicArrow />
     <FuiDemoCompoundComponent />
     <FuiDemoBasicInteractions />
+    <FuiDemoBasicComponentRefs />
   </div>
 </template>
 
