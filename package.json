@@ -7,10 +7,13 @@
   "packageManager": "pnpm@7.14.2",
   "author": "Renato de Leão <https://positionrelative.co>",
   "scripts": {
+    "build:vue": "pnpm --filter=floating-ui-x-vue run build",
+    "build:vue-interactions": "pnpm --filter=floating-ui-x-vue-interactions run build",
     "dev:vue": "pnpm --filter=floating-ui-x-vue run dev",
-    "dev:vue-interactions": "pnpm --filter=floating-ui-x-vue-interactions run build",
+    "dev:vue-interactions": "pnpm --filter=floating-ui-x-vue-interactions run dev",
+    "play:vue": "pnpm --filter=playground-vue run dev",
     "typecheck:vue": "pnpm --filter=floating-ui-x-vue run typecheck",
-    "play:vue": "pnpm --filter=playground-vue run dev"
+    "typecheck:vue-interactions": "pnpm --filter=floating-ui-x-vue-interactions run typecheck"
   },
   "prettier": {
     "singleQuote": true,
