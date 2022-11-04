@@ -1,10 +1,10 @@
 {
   "private": true,
   "name": "floating-ui-x",
-  "description": "Mother of packages",
+  "description": "Mother of non-react floating-ui packages",
   "version": "0.0.0",
-  "packageManager": "pnpm@7.14.0",
-  "license": "ISC",
+  "license": "MIT",
+  "packageManager": "pnpm@7.14.2",
   "author": "Renato de Leão <https://positionrelative.co>",
   "scripts": {
     "dev:vue-dom": "pnpm --filter=floating-ui.vue-dom run dev",
