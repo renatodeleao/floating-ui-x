@@ -8,7 +8,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@src': resolve(__dirname, './src'),
-      'floating-ui.vue-dom': resolve(__dirname, './src/index.js'),
+      'floating-ui-x-vue': resolve(__dirname, './src/index.js'),
     },
   },
   build: {
@@ -18,7 +18,7 @@ export default defineConfig({
       formats: ['es', 'esm', 'umd'],
       name: 'FloatingUIVueDOM',
       // the proper extensions will be added
-      fileName: 'floating-ui.vue-dom',
+      fileName: 'floating-ui-x-vue',
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled

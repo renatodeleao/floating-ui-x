@@ -17,7 +17,7 @@ export default defineConfig({
       formats: ['es', 'esm', 'umd'],
       name: 'FloatingUIVueDOMInteractions',
       // the proper extensions will be added
-      fileName: 'floating-ui.vue-dom-interactions',
+      fileName: 'floating-ui-x-vue-interactions',
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
@@ -26,7 +26,7 @@ export default defineConfig({
         'vue',
         '@floating-ui/core',
         '@floating-ui/dom',
-        'floating-ui.vue-dom',
+        'floating-ui-x-vue',
       ],
       output: {
         // Provide global variables to use in the UMD build
@@ -35,7 +35,7 @@ export default defineConfig({
           vue: 'Vue',
           '@floating-ui/core': 'FloatingUICore',
           '@floating-ui/dom': 'FloatingUIDOM',
-          'floating-ui.vue-dom': 'FloatingUIVueDOM',
+          'floating-ui-x-vue': 'FloatingUIVueDOM',
         },
       },
     },

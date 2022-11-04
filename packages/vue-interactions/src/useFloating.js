@@ -1,4 +1,4 @@
-import { useFloating as usePosition } from 'floating-ui.vue-dom';
+import { useFloating as usePosition } from 'floating-ui-x-vue';
 import { ref } from 'vue';
 import { useInteractions } from './useInteractions';
 

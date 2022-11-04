@@ -16,7 +16,7 @@
     "baseUrl": ".",
     "checkJs": true,
     "paths": {
-      "floating-ui.vue-dom": ["packages/vue-dom/src/index.js"],
+      "floating-ui-x-vue": ["packages/vue/src/index.js"],
     }
   },
   "include": ["packages/**/*"],

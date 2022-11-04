@@ -3,9 +3,9 @@ import {
   MaybeRef,
   UseFloatingReturn as UseFloatingReturnVueDom,
   UseFloatingProps as UseFloatingPropsVueDom,
-} from 'floating-ui.vue-dom';
+} from 'floating-ui-x-vue';
 
-export * from 'floating-ui.vue-dom';
+export * from 'floating-ui-x-vue';
 
 export type UseFloatingContext = {
   open: Ref<boolean>;

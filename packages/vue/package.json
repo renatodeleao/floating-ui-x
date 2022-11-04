@@ -1,7 +1,6 @@
 {
-  "name": "floating-ui.vue-dom",
+  "name": "floating-ui-x-vue",
   "version": "0.0.0",
-  "private": true,
   "license": "MIT",
   "type": "module",
   "exports": "./src/index.js",

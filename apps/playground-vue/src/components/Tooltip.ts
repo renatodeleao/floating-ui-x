@@ -20,7 +20,7 @@ import {
   arrowPosition,
   autoUpdate,
   offset,
-} from 'floating-ui.vue-dom';
+} from 'floating-ui-x-vue';
 
 import { render } from '../utils/render';
 

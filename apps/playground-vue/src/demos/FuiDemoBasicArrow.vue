@@ -9,7 +9,7 @@ import {
   arrowPosition,
   offset,
   autoUpdate,
-} from 'floating-ui.vue-dom';
+} from 'floating-ui-x-vue';
 
 const arrowRef = ref(null);
 const { x, y, reference, floating, strategy, placement, middlewareData } =

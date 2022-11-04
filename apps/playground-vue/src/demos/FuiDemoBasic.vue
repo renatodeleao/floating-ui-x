@@ -1,6 +1,6 @@
 <script setup>
 import { FuiBox, FuiWindow } from '../components';
-import { useFloating } from 'floating-ui.vue-dom';
+import { useFloating } from 'floating-ui-x-vue';
 const { x, y, reference, floating, strategy } = useFloating();
 </script>
 

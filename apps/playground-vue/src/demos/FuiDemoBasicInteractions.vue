@@ -2,7 +2,7 @@
 import { FuiBox, FuiWindow } from '../components';
 import { ref, computed } from 'vue';
 import {
-  // re-exports everything  'floating-ui.vue-dom'
+  // re-exports everything  'floating-ui-x-vue'
   arrow,
   computeArrowPosition,
   arrowPosition,
@@ -12,7 +12,7 @@ import {
   useFloating,
   useClickInteractionware,
   useInteractions,
-} from 'floating-ui.vue-dom-interactions';
+} from 'floating-ui-x-vue-interactions';
 
 const arrowRef = ref(null);
 const openRef = ref(false);
@@ -59,7 +59,7 @@ function externallyToggleOpen() {
 <template>
   <FuiBox
     title="Basic Interactions"
-    description="Adding basic interactive behaviour with floating-ui.vue-dom-interactions package"
+    description="Adding basic interactive behaviour with floating-ui-x-vue-interactions package"
   >
     <FuiWindow title="Interactions">
       <span ref="reference" class="fui-reference" v-bind="referenceProps">
