@@ -49,8 +49,9 @@ const arrowStyles = computed(() => {
         class="fui-floating"
         :style="{
           position: strategy,
-          top: y ? `${y}px` : '',
-          left: x ? `${x}px` : '',
+          transform: `translate3d(${x ?? 0}px, ${y ?? 0}px, 0px)`,
+          top: '0px',
+          left: '0px',
           width: 'max-content',
         }"
       >
