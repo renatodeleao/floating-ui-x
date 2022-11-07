@@ -1,6 +1,6 @@
 {
   "name": "floating-ui-x-vue",
-  "version": "0.0.0-initial-20221104174409",
+  "version": "0.1.0",
   "license": "MIT",
   "type": "module",
   "main": "./dist/floating-ui-x-vue.umd.cjs",

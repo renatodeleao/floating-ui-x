@@ -1,5 +1,17 @@
 # floating-ui-x-vue
 
+## 0.1.0
+
+### Minor Changes
+
+- First public release
+
+## 0.0.0
+
+### Minor Changes
+
+- First official version after snapshot release
+
 ## 0.0.0-initial-20221104174409
 
 ### Minor Changes

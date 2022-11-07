@@ -13,7 +13,8 @@
     "dev:vue-interactions": "pnpm --filter=floating-ui-x-vue-interactions run dev",
     "play:vue": "pnpm --filter=playground-vue run dev",
     "typecheck:vue": "pnpm --filter=floating-ui-x-vue run typecheck",
-    "typecheck:vue-interactions": "pnpm --filter=floating-ui-x-vue-interactions run typecheck"
+    "typecheck:vue-interactions": "pnpm --filter=floating-ui-x-vue-interactions run typecheck",
+    "release:vue": "pnpm run build:vue && changeset"
   },
   "prettier": {
     "singleQuote": true,
