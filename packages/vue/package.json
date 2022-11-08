@@ -7,16 +7,17 @@
   "module": "./dist/floating-ui-x-vue.js",
   "exports": {
     ".": {
-      "types": "./src/index.d.ts",
+      "types": "./index.d.ts",
       "import": "./dist/floating-ui-x-vue.js",
       "require": "./dist/floating-ui-x-vue.umd.cjs"
     },
     "./package.json": "./package.json"
   },
-  "types": "./src/index.d.ts",
+  "types": "./index.d.ts",
   "files": [
     "dist/",
-    "src/**/*.d.ts"
+    "src/**/*.d.ts",
+    "index.d.ts"
   ],
   "scripts": {
     "dev": "vite serve",
