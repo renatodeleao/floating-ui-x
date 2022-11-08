@@ -1,5 +1,12 @@
 # floating-ui-x-vue
 
+## 0.1.1
+
+### Patch Changes
+
+- ewqw
+- 9dfc1c8: correct type definitions file exports path
+
 ## 0.1.0
 
 ### Minor Changes
