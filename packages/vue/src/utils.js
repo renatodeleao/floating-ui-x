@@ -27,7 +27,7 @@ import { unref } from 'vue';
  *```
  *
  * @template T
- * @param {import('./index').MaybeRef<T>} templateRefBinding
+ * @param {import('./types.js').MaybeRef<T>} templateRefBinding
  * @see {@link https://vueuse.org/core/unrefelement/#unrefelement}
  * @see {@link https://vuejs.org/guide/essentials/template-refs.html#ref-on-component}
  *

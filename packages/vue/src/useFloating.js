@@ -2,8 +2,8 @@ import { ref, watch, toRefs, unref, reactive, computed } from 'vue';
 import { computePosition } from '@floating-ui/dom';
 import { unrefElement } from './utils';
 /**
- * @param {import('./index').UseFloatingProps} options
- * @return {import('./index').UseFloatingReturn}
+ * @param {import('./types.js').UseFloatingProps} options
+ * @return {import('./types.js').UseFloatingReturn}
  */
 export function useFloating({
   middleware,
