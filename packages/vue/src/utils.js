@@ -34,28 +34,29 @@ import { unref } from 'vue';
  */
 export function unrefElement(templateRefBinding) {
   const templateRef = unref(templateRefBinding);
-  if (templateRef === null || templateRef === undefined) return templateRef;
 
-  if (templateRef.$el?.nodeType === 1) {
+  if (templateRef == null) {
+    return templateRef;
+  } else if (templateRef.$el?.nodeType === 1) {
     // is a component and root is a single Element node
     return templateRef.$el;
   } else if (templateRef.$el) {
     // is a component, but a either multi-root node or and invalid one (ex: text only)
     console.warn(
-      `You have assign assigned tge ref to a component, but its root node is not a valid Element.
+      `You have assign assigned the ref to a component, but its root node is not a valid Element.
       Check if you have a multi-root node component or text/comment nodes. If your component has
       multiple root elements intentionally, please forward the ref to your desired target el.`
     );
     return templateRef.$el.nextElementSibling;
+  } else if ('getBoundingClientRect' in templateRef) {
+    // VirtualElemlement or HTMLElement
+    return templateRef;
   } else {
-    if (templateRef.nodeType !== 1) {
-      // is not an Element node, so not valid argument
-      console.warn(
-        '[floating-ui-x] invalid ref assignment: please assign the ref to valid Element or Component'
-      );
-    }
-
-    // Not a component, but a raw an DOM Element node
+    // invalid valid argument
+    console.warn(
+      '[floating-ui-x] invalid ref assignment: please assign the ref to valid Element, Component or VirtualElement'
+    );
+    // let @floating-ui/dom throw the actual error.
     return templateRef;
   }
 }
