@@ -1,5 +1,12 @@
 # playground-vue
 
+## 0.0.3
+
+### Patch Changes
+
+- Updated dependencies
+  - floating-ui-x-vue@0.1.2
+
 ## 0.0.2
 
 ### Patch Changes

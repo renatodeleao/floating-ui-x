@@ -1,5 +1,11 @@
 # floating-ui-x-vue
 
+## 0.1.2
+
+### Patch Changes
+
+- Handling VirtualElements refrences correctly
+
 ## 0.1.1
 
 ### Patch Changes
