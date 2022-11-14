@@ -2,6 +2,7 @@
 import {
   FuiDemoBasic,
   FuiDemoBasicArrow,
+  FuiDemoBasicVirtualElement,
   FuiDemoCompoundComponent,
   FuiDemoBasicInteractions,
   FuiDemoBasicComponentRefs,
@@ -12,6 +13,7 @@ import {
   <div class="fui-grid">
     <FuiDemoBasic />
     <FuiDemoBasicArrow />
+    <FuiDemoBasicVirtualElement />
     <FuiDemoCompoundComponent />
     <FuiDemoBasicInteractions />
     <FuiDemoBasicComponentRefs />

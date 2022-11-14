@@ -1,6 +1,7 @@
 <script setup>
 defineProps({
   title: String,
+  forwardRefContent: {},
 });
 </script>
 
@@ -14,7 +15,13 @@ defineProps({
       </div>
       <h1 class="fui-window__toolbar-title">{{ title }}</h1>
     </div>
-    <div class="fui-window__dom">
+    <!--
+      this works even if fowardRefContent is not a function but a regular Ref
+      Object. :ref="forwardRefContent" on the other hand only accepts if is a function
+      They should match since v-bind is allegedly shorthand syntax.
+      Create vue issue
+    -->
+    <div class="fui-window__dom" v-bind="{ ref: forwardRefContent }">
       <slot />
     </div>
   </div>
@@ -71,6 +78,7 @@ defineProps({
   }
 
   &__dom {
+    position: relative;
     padding: 16px;
     flex: 1 0 0%;
     overflow: auto;
